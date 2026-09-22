@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><title>AURA Lab Ops // Settings & System Configurations</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-lowest": "#ffffff", "on-tertiary-container": "#188ace", "on-surface": "#0b1c30", "tertiary": "#000000", "background": "#f8f9ff", "secondary-fixed": "#e1e2e4", "on-surface-variant": "#44474a", "primary-fixed-dim": "#c4c7cb", "inverse-on-surface": "#eaf1ff", "on-secondary-fixed-variant": "#444749", "tertiary-container": "#001d31", "on-secondary-container": "#606365", "surface-container-high": "#dce9ff", "inverse-surface": "#213145", "on-background": "#0b1c30", "on-error-container": "#93000a", "surface-container": "#e5eeff", "secondary": "#5c5f60", "outline": "#75777a", "on-primary": "#ffffff", "tertiary-fixed": "#cce5ff", "tertiary-fixed-dim": "#93ccff", "on-tertiary-fixed": "#001d31", "primary-fixed": "#e0e3e7", "surface-bright": "#f8f9ff", "surface-container-highest": "#d3e4fe", "on-error": "#ffffff", "on-primary-fixed": "#181c1f", "on-primary-fixed-variant": "#43474b", "secondary-fixed-dim": "#c5c6c8", "on-secondary-fixed": "#191c1e", "on-tertiary": "#ffffff", "surface-variant": "d3e4fe", "inverse-primary": "#c4c7cb", "outline-variant": "#c5c6ca", "surface-container-low": "#eff4ff", "primary": "#000000", "error": "#ba1a1a", "surface-dim": "#cbdbf5", "error-container": "#ffdad6", "surface-tint": "#5b5f62", "on-primary-container": "#818488", "on-tertiary-fixed-variant": "#004b73", "secondary-container": "#dee0e2", "primary-container": "#181c1f", "on-secondary": "#ffffff", "surface": "#f8f9ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "margin": "3rem", "gutter-mobile": "1rem", "margin-mobile": "1.25rem", "space-sm": "0.5rem", "space-md": "1rem" }, "fontFamily": { "headline-md": ["Space Grotesk"], "body-md": ["Inter"], "display-hero": ["Space Grotesk"], "label-uppercase": ["Space Grotesk"], "headline-xl": ["Space Grotesk"], "display-hero-mobile": ["Space Grotesk"], "body-lg": ["Inter"], "headline-xl-mobile": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "body-sm": ["Inter"], "label-numeric": ["Space Grotesk"], "headline-lg": ["Space Grotesk"] }, "fontSize": { "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}], "display-hero": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "label-uppercase": ["11px", {"lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "700"}], "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "display-hero-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400"}], "headline-xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600"}], "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}], "label-numeric": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}] } } } };</script><link rel="stylesheet" href="../css/style.css">
+</head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="Minimalist geometric athletic brand mark for premium sportswear company 'AURA', featuring sleek aerodynamic overlapping wings or dynamic kinetic chevron in crisp black and pure white vector aesthetic. Brand logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XbTzT4xxlLPcoc8jSv7hw5AGFE-c1rnfDjXo2xT3mvdIKab0cV7hBtl8MPZCfMEsELh2WU2ig_eZ1CP8OTEwCJiMfOjBZ-pvR5GD0ykR0Jf8LJww6dTkaUzfYuai31TPW4JTyNdPv_UeiUJaTA3h7UhvNuoM2vJH4YHoySocVhxoXcGXP9ygRvU4n8xrbG1JRAAJ_S8HoLzMbvVMnsXpoDw93b1_XDZ4mT7cJINSIlwnYgZpiP67tt1cQ"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">AURA</span><span class="font-label-uppercase text-label-uppercase text-on-surface-variant">LAB SYSTEM</span></div></div><div class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-uppercase text-label-uppercase">OPS // ADMIN</div></div><div class="px-space-lg py-space-sm"><div class="h-[1px] w-full bg-surface-container"></div></div><nav class="flex flex-col gap-1 px-space-md py-space-xs" data-active-classes="bg-primary text-on-primary font-medium rounded-lg shadow-sm">
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="dashboard" href="index.html"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="products" href="products.html"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Products</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="product-edit" href="product-edit.html"><span class="material-symbols-outlined text-[20px]">add_box</span><span>Add / Edit Product</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="categories" href="categories.html"><span class="material-symbols-outlined text-[20px]">category</span><span>Categories</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="orders" href="orders.html"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span>Orders</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="customers" href="customers.html"><span class="material-symbols-outlined text-[20px]">group</span><span>Customers</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="analytics" href="analytics.html"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Analytics</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 transition-colors bg-primary text-on-primary font-medium rounded-lg shadow-sm" data-path="settings" href="settings.html" aria-current="page"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings</span></a>
+<div class="my-2 border-t border-surface-container"></div>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-primary hover:bg-surface-container-low transition-colors font-label-uppercase text-label-uppercase font-bold" href="../index.html">
+  <span class="material-symbols-outlined text-[20px] text-on-tertiary-container">storefront</span><span>← View Storefront</span>
+</a>
+</nav></div><div class="flex flex-col px-space-md pb-space-lg"><div class="px-space-sm pb-space-sm"><div class="h-[1px] w-full bg-surface-container"></div></div><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="relative flex items-center justify-center"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-on-tertiary-container rounded-full ring-2 ring-surface-container-lowest"></span></div><div class="flex flex-col"><span class="font-headline-sm text-body-sm font-semibold text-on-surface leading-tight">Elena Rostova</span><span class="font-label-uppercase text-label-uppercase text-on-surface-variant">Ops Lead</span></div></div><div class="flex items-center gap-1"><button aria-label="Notifications" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span></button><button aria-label="Logout" class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">logout</span></button></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-uppercase text-label-uppercase text-on-surface-variant"><span class="text-on-surface font-semibold">System Telemetry</span><span>//</span><span>Commerce Operations</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-uppercase text-label-uppercase"><span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span><span>Operational • Zurich EU-1</span></div></div><div class="flex items-center gap-space-md"><div class="relative w-80 hidden md:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full h-9 pl-9 pr-3 rounded-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest transition-all" id="admin-quick-search" placeholder="Search orders, SKU, customers (⌘K)..." type="text"/></div><a href="product-edit.html"  class="flex items-center gap-space-xs px-space-md py-2 rounded-full bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary transition-all font-label-uppercase text-label-uppercase shadow-sm" type="button"><span class="material-symbols-outlined text-[16px]">add</span><span>New Product</span></a><div class="relative flex items-center"><button aria-label="Notifications indicator" class="relative p-2 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-on-tertiary-container ring-2 ring-surface-container-lowest"></span></button></div><div class="w-[1px] h-6 bg-surface-container"></div><div class="flex items-center gap-space-xs cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Command Toolbar -->
+<div class="sticky top-16 z-30 bg-surface-container-lowest/90 backdrop-blur-md px-space-lg py-3.5 shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2 font-label-uppercase text-label-uppercase text-on-surface-variant">
+<span>Admin</span>
+<span>/</span>
+<span>System</span>
+<span>/</span>
+<span class="text-on-surface font-semibold">Settings &amp; Telemetry</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-md text-headline-md tracking-tight text-on-surface">Settings &amp; System Configurations</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-uppercase text-label-uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+          SYS-READY // LIVE
+        </span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="hidden md:flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">sync</span>
+<span id="sync-timestamp">All changes synced • 14:28:09 UTC</span>
+</div>
+<div class="h-5 w-[1px] bg-secondary-container hidden md:block"></div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container hover:text-on-surface transition-all font-label-uppercase text-label-uppercase" type="button">
+          Discard Changes
+        </button>
+<button class="flex items-center gap-2 px-space-lg py-2 rounded-full bg-primary text-on-primary hover:bg-primary-container transition-all font-label-uppercase text-label-uppercase shadow-sm" id="top-save-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Save Changes</span>
+<span class="ml-1 px-1.5 py-0.5 rounded bg-surface-container-lowest/20 text-on-primary text-[10px] tracking-widest font-label-numeric">⌘S</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Settings Main Layout -->
+<div class="max-w-[1440px] w-full mx-auto px-space-lg py-space-xl">
+<div class="grid grid-cols-12 gap-gutter items-start">
+<!-- Left Sub-navigation Anchor Column -->
+<div class="col-span-12 lg:col-span-3 sticky top-36">
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-1">
+<div class="px-space-md py-2 font-label-uppercase text-label-uppercase text-on-surface-variant">
+            CONFIG SECTORS
+          </div>
+<a class="nav-tab-item flex items-center justify-between p-space-sm rounded-lg bg-primary text-on-primary transition-all" href="#general-profile">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-body-sm font-semibold leading-tight">General &amp; Store</span>
+<span class="font-body-sm text-[11px] opacity-75">Brand profile &amp; locales</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+<a class="nav-tab-item flex items-center justify-between p-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="#payment-gateways">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">credit_card</span>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-body-sm font-semibold leading-tight">Payment Gateways</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Stripe, Klarna, Express</span>
+</div>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-uppercase text-[10px] text-on-surface">LIVE</span>
+</a>
+<a class="nav-tab-item flex items-center justify-between p-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="#shipping-logistics">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-body-sm font-semibold leading-tight">Shipping &amp; Logistics</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Carriers, rate tables</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[16px] opacity-40">north_east</span>
+</a>
+<a class="nav-tab-item flex items-center justify-between p-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="#notifications-alerts">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-body-sm font-semibold leading-tight">Notifications &amp; Alerts</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Stock alerts, webhooks</span>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+</a>
+<a class="nav-tab-item flex items-center justify-between p-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" href="#account-security">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">shield_person</span>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-body-sm font-semibold leading-tight">Account &amp; Security</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Hardware keys, active sessions</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">verified_user</span>
+</a>
+<div class="mt-space-md pt-space-sm p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant">SYSTEM HEALTH</span>
+<span class="font-label-numeric text-[11px] text-on-tertiary-container">99.98% UP</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full w-[99%]"></div>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-2 leading-relaxed">
+              Oregon Gateway cluster operating nominal. Zero pending operational sync retries.
+            </p>
+</div>
+</div>
+</div>
+<!-- Right Main Content Stack -->
+<div class="col-span-12 lg:col-span-9 flex flex-col gap-space-xl">
+<!-- SECTION A: General & Store Information -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-sm flex flex-col gap-space-lg" id="general-profile">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm bg-gradient-to-r from-transparent via-transparent to-surface-container-low/40 rounded-lg">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-uppercase text-[10px]">SECTION 01</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Store Profile &amp; Localization</h2>
+</div>
+<p class="font-body-md text-body-sm text-on-surface-variant mt-1">Core activewear flagship metadata, high-resolution vector assets, and global market locales.</p>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-on-surface font-label-numeric text-[12px] self-start md:self-auto">
+              STORE_ID // AUR-GLB-0081
+            </span>
+</div>
+<!-- Brand Logo Upload Matrix -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col md:flex-row items-start md:items-center gap-space-lg justify-between">
+<div class="flex items-center gap-space-md">
+<div class="relative w-28 h-20 rounded-lg bg-surface-container-lowest flex items-center justify-center p-3 shadow-sm overflow-hidden">
+<img alt="AURA Athletics technical brand signature emblem" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XbTzT4xxlLPcoc8jSv7hw5AGFE-c1rnfDjXo2xT3mvdIKab0cV7hBtl8MPZCfMEsELh2WU2ig_eZ1CP8OTEwCJiMfOjBZ-pvR5GD0ykR0Jf8LJww6dTkaUzfYuai31TPW4JTyNdPv_UeiUJaTA3h7UhvNuoM2vJH4YHoySocVhxoXcGXP9ygRvU4n8xrbG1JRAAJ_S8HoLzMbvVMnsXpoDw93b1_XDZ4mT7cJINSIlwnYgZpiP67tt1cQ"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Primary Brand Vector &amp; Emblem</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Recommended SVG or PNG transparent (2400×600px, max 5.0 MB)</span>
+<div class="flex items-center gap-2 mt-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-uppercase text-[10px]">VECTOR SVG</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-uppercase text-[10px]">COLOR PROFILE: SRGB</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-stretch md:self-auto justify-end">
+<button class="px-space-md py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all font-label-uppercase text-label-uppercase shadow-sm" type="button">
+                Replace Asset
+              </button>
+<button class="px-space-sm py-2 rounded-full text-error hover:bg-error-container/40 transition-all font-label-uppercase text-label-uppercase" type="button">
+                Remove
+              </button>
+</div>
+</div>
+<!-- Form Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant" for="store-name">Store Entity Name</label>
+<input class="h-12 px-space-md rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest transition-all" id="store-name" type="text" value="AURA Athletics™ Global Flagship"/>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Public legal consumer identifier across receipts &amp; checkout</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant" for="store-support-email">Central Operations Support Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">mail</span>
+<input class="w-full h-12 pl-10 pr-space-md rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest transition-all" id="store-support-email" type="email" value="ops@aura-athletics.com"/>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Automated fulfillment escalations routed directly</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant" for="store-phone">Customer Operations Phone</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">phone</span>
+<input class="w-full h-12 pl-10 pr-space-md rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest transition-all" id="store-phone" type="tel" value="+1 (415) 890-2340"/>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Toll-free Priority athlete triage desk</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant" for="primary-currency">Base Financial Currency</label>
+<select class="h-12 px-space-md rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest transition-all" id="primary-currency">
+<option selected="">USD — United States Dollar ($)</option>
+<option>EUR — Euro (€)</option>
+<option>GBP — British Pound (£)</option>
+<option>JPY — Japanese Yen (¥)</option>
+<option>CHF — Swiss Franc (CHF)</option>
+</select>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Active dynamic multi-currency display: EUR, GBP, JPY enabled</span>
+</div>
+<div class="md:col-span-2 flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant" for="dispatch-address">Physical Dispatch &amp; Return Logistics Hub</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-on-surface-variant text-[18px]">warehouse</span>
+<textarea class="w-full p-3 pl-10 rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest transition-all" id="dispatch-address" rows="2">Building 4, AURA Kinetic Center, 88 Industrial Parkway, Portland, OR 97201, USA</textarea>
+</div>
+</div>
+<div class="md:col-span-2 flex flex-col md:flex-row md:items-center justify-between gap-space-md p-space-md bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Store Timezone &amp; Telemetry Clock</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">UTC-07:00 (Pacific Time - Los Angeles)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="px-space-md py-1.5 rounded-full bg-surface-container-lowest shadow-sm flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span class="font-label-numeric text-[13px] text-on-surface tracking-wider font-semibold">14:28:09 PST</span>
+</div>
+<button class="text-on-surface font-label-uppercase text-label-uppercase underline hover:opacity-75" type="button">Modify Locale</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION B: Payment Gateways & Processing -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-sm flex flex-col gap-space-lg" id="payment-gateways">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-uppercase text-[10px]">SECTION 02</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Payment Gateways &amp; Processing</h2>
+</div>
+<p class="font-body-md text-body-sm text-on-surface-variant mt-1">Multi-rail checkout providers, accelerated wallets, and fraud verification filters.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface font-label-uppercase text-label-uppercase">
+                LIVE PRODUCTION RAILS
+              </span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-space-md">
+<!-- Stripe Master -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center font-headline-md font-bold text-headline-sm">
+                  S
+                </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Stripe Elements &amp; Direct Cards</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-uppercase text-[10px]">CONNECTED</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-numeric text-[11px]">2.9% + 30¢</span>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">Visa, Mastercard, American Express, JCB, UnionPay, Discover. 3D-Secure 2.2 Active.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-stretch md:self-auto justify-end">
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all font-label-uppercase text-label-uppercase shadow-sm" type="button">
+                  Configure API Keys
+                </button>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm">
+<span class="font-label-uppercase text-[11px] text-on-surface-variant">LIVE MODE</span>
+<button aria-label="Toggle Live Mode" class="w-9 h-5 rounded-full bg-primary relative transition-colors" type="button">
+<span class="absolute right-0.5 top-0.5 w-4 h-4 rounded-full bg-on-primary shadow-sm"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Apple Pay / Google Pay Express -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px] text-on-surface">phone_iphone</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Apple Pay &amp; Google Pay Express Checkout</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-uppercase text-[10px]">ACTIVE</span>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">Biometric 1-touch checkout on PDP, Cart Drawer, and Mini-Bag overlays.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-stretch md:self-auto justify-end">
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all font-label-uppercase text-label-uppercase shadow-sm" type="button">
+                  Domain Verification
+                </button>
+<button aria-label="Toggle Express Pay" class="w-9 h-5 rounded-full bg-primary relative transition-colors" type="button">
+<span class="absolute right-0.5 top-0.5 w-4 h-4 rounded-full bg-on-primary shadow-sm"></span>
+</button>
+</div>
+</div>
+<!-- Klarna / Afterpay -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px] text-on-surface">pie_chart</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Klarna &amp; Afterpay Installments</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-uppercase text-[10px]">ACTIVE</span>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">Split in 4 zero-interest installments for shopping bags exceeding $75.00 threshold.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-stretch md:self-auto justify-end">
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all font-label-uppercase text-label-uppercase shadow-sm" type="button">
+                  Limits ($75 - $2,500)
+                </button>
+<button aria-label="Toggle Installments" class="w-9 h-5 rounded-full bg-primary relative transition-colors" type="button">
+<span class="absolute right-0.5 top-0.5 w-4 h-4 rounded-full bg-on-primary shadow-sm"></span>
+</button>
+</div>
+</div>
+<!-- PayPal & Web3 Crypto Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- PayPal -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center shadow-sm font-headline-sm font-bold">
+                    P
+                  </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">PayPal Commerce</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-uppercase text-[9px]">INACTIVE</span>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Global PayPal &amp; Venmo checkout</span>
+</div>
+</div>
+<button class="px-space-sm py-1.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-uppercase text-[11px] shadow-sm" type="button">
+                  Connect
+                </button>
+</div>
+<!-- Web3 Pay -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px] text-on-surface">token</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Crypto / USDC Rail</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-fixed text-tertiary-container font-label-uppercase text-[9px]">TESTNET BETA</span>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Solana Pay &amp; Base USDC settles</span>
+</div>
+</div>
+<button class="px-space-sm py-1.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-uppercase text-[11px] shadow-sm" type="button">
+                  Setup
+                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION C: Shipping & Fulfillment Rules -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-sm flex flex-col gap-space-lg" id="shipping-logistics">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-uppercase text-[10px]">SECTION 03</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Shipping &amp; Fulfillment Matrix</h2>
+</div>
+<p class="font-body-md text-body-sm text-on-surface-variant mt-1">Delivery zones, flat fee tables, and real-time carrier API integrations.</p>
+</div>
+<div class="flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-low font-label-numeric text-[12px] text-on-surface">
+<span>ACTIVE ZONES:</span>
+<span class="font-semibold">DOMESTIC + 42 INTL</span>
+</div>
+</div>
+<!-- Free Shipping Promo Threshold Banner -->
+<div class="p-space-md bg-gradient-to-r from-surface-container-low via-surface-container-low to-surface-container-high/30 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-on-tertiary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">loyalty</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Free Priority Shipping Incentive Threshold</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Activates animated progress bar in athlete slide-over shopping bag</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-lg shadow-sm">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">$</span>
+<input class="w-20 bg-transparent text-on-surface font-headline-sm text-body-sm font-semibold focus:outline-none" type="text" value="120.00"/>
+<span class="font-label-uppercase text-[10px] text-on-surface-variant">USD</span>
+</div>
+<button aria-label="Toggle Free Shipping Promo" class="w-10 h-6 rounded-full bg-primary relative transition-colors" type="button">
+<span class="absolute right-1 top-1 w-4 h-4 rounded-full bg-on-primary shadow-sm"></span>
+</button>
+</div>
+</div>
+<!-- Rate Table Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Domestic Standard</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-numeric text-[11px]">$6.00</span>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant">3–5 Business Days via USPS Priority / UPS Ground</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-[12px] text-on-surface-variant">
+<span>Carbon Neutral: Enabled</span>
+<button class="text-on-surface font-label-uppercase text-[11px] underline" type="button">Edit</button>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Domestic Express</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-numeric text-[11px]">$15.00</span>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant">1–2 Business Days Priority Air (FedEx 2Day)</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-[12px] text-on-surface-variant">
+<span>Signature Required &gt; $300</span>
+<button class="text-on-surface font-label-uppercase text-[11px] underline" type="button">Edit</button>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Global Courier</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-numeric text-[11px]">$24.00</span>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant">DHL Express Worldwide DDP (Delivered Duty Paid)</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-[12px] text-on-surface-variant">
+<span>Customs API: Automated</span>
+<button class="text-on-surface font-label-uppercase text-[11px] underline" type="button">Edit</button>
+</div>
+</div>
+</div>
+<!-- Carrier API Connectors -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant">INTEGRATED CARRIER TELEMETRY &amp; RATE ENGINES</span>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-1">
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">FedEx</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+</div>
+<span class="font-label-uppercase text-[10px] text-on-surface-variant">CONNECTED</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">UPS</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+</div>
+<span class="font-label-uppercase text-[10px] text-on-surface-variant">CONNECTED</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">DHL Exp</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+</div>
+<span class="font-label-uppercase text-[10px] text-on-surface-variant">CONNECTED</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">USPS</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+</div>
+<span class="font-label-uppercase text-[10px] text-on-surface-variant">CONNECTED</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION D: Notifications & Operational Alerts -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-sm flex flex-col gap-space-lg" id="notifications-alerts">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-uppercase text-[10px]">SECTION 04</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Notifications &amp; Operational Alerts</h2>
+</div>
+<p class="font-body-md text-body-sm text-on-surface-variant mt-1">Real-time alerts, warehouse stock-out telemetry, and chargeback webhooks.</p>
+</div>
+<button class="text-on-surface font-label-uppercase text-label-uppercase underline hover:opacity-75 self-start md:self-auto" type="button">
+              Test Webhooks (Slack/Email)
+            </button>
+</div>
+<div class="flex flex-col divide-y divide-surface-container">
+<!-- Alert 1 -->
+<div class="py-space-md flex items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface mt-0.5">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">New Order Telemetry Notifications</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Immediate dispatch notifications sent to Operations Slack channel (#ops-dispatch) &amp; leadership email.</span>
+</div>
+</div>
+<button aria-label="Toggle Order Alerts" class="toggle-switch w-10 h-6 rounded-full bg-primary relative transition-colors flex-shrink-0" type="button">
+<span class="absolute right-1 top-1 w-4 h-4 rounded-full bg-on-primary shadow-sm transition-transform"></span>
+</button>
+</div>
+<!-- Alert 2 -->
+<div class="py-space-md flex items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface mt-0.5">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Low Stock Inventory Alarm</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-numeric text-[11px]">&lt; 15 UNITS</span>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Triggers automated factory reorder queue flag when activewear SKU count slips below threshold.</span>
+</div>
+</div>
+<button aria-label="Toggle Low Stock Alarm" class="toggle-switch w-10 h-6 rounded-full bg-primary relative transition-colors flex-shrink-0" type="button">
+<span class="absolute right-1 top-1 w-4 h-4 rounded-full bg-on-primary shadow-sm transition-transform"></span>
+</button>
+</div>
+<!-- Alert 3 -->
+<div class="py-space-md flex items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface mt-0.5">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Athlete / Customer Registrations</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Receive consolidated daily digest at 00:00 UTC instead of individual real-time registration pings.</span>
+</div>
+</div>
+<button aria-label="Toggle Registration Digest" class="toggle-switch w-10 h-6 rounded-full bg-surface-container relative transition-colors flex-shrink-0" type="button">
+<span class="absolute left-1 top-1 w-4 h-4 rounded-full bg-on-surface-variant shadow-sm transition-transform"></span>
+</button>
+</div>
+<!-- Alert 4 -->
+<div class="py-space-md flex items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface mt-0.5">
+<span class="material-symbols-outlined text-[18px]">reviews</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Product Performance Review Submissions</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Flag unverified athlete reviews with immediate moderation queue assignment prior to publication.</span>
+</div>
+</div>
+<button aria-label="Toggle Review Moderation" class="toggle-switch w-10 h-6 rounded-full bg-primary relative transition-colors flex-shrink-0" type="button">
+<span class="absolute right-1 top-1 w-4 h-4 rounded-full bg-on-primary shadow-sm transition-transform"></span>
+</button>
+</div>
+<!-- Alert 5 -->
+<div class="py-space-md flex items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-error-container/30 text-error flex items-center justify-center mt-0.5">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Payment Failure &amp; Chargeback Escalations</span>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-uppercase text-[10px]">HIGH PRIORITY</span>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Immediate encrypted SMS and direct phone trigger on disputes over $250.00.</span>
+</div>
+</div>
+<button aria-label="Toggle Chargeback Escalation" class="toggle-switch w-10 h-6 rounded-full bg-primary relative transition-colors flex-shrink-0" type="button">
+<span class="absolute right-1 top-1 w-4 h-4 rounded-full bg-on-primary shadow-sm transition-transform"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION E: Account & Security Credentials -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-sm flex flex-col gap-space-lg" id="account-security">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-uppercase text-[10px]">SECTION 05</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Account Credentials &amp; 2FA Security</h2>
+</div>
+<p class="font-body-md text-body-sm text-on-surface-variant mt-1">Multi-factor security keys, authenticated hardware dongles, and active administrative sessions.</p>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-on-surface font-label-uppercase text-label-uppercase">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">lock</span>
+<span>AES-256 ENCRYPTED</span>
+</div>
+</div>
+<!-- Master Admin Details Card -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm font-semibold">
+                MV
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Marcus Vance</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-uppercase text-[10px]">SENIOR OPS DIRECTOR</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">marcus.v@aura-athletics.com</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface font-label-uppercase text-[9px] shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                    VERIFIED
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-stretch md:self-auto justify-end">
+<span class="font-body-sm text-[12px] text-on-surface-variant hidden xl:inline">Password rotated 42 days ago</span>
+<button class="px-space-md py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-uppercase text-label-uppercase shadow-sm" type="button">
+                Change Password
+              </button>
+</div>
+</div>
+<!-- 2FA Status -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[20px]">key</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Hardware Key &amp; TOTP Authenticator</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-uppercase text-[10px]">ACTIVE &amp; ENFORCED</span>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant">YubiKey 5C NFC Primary + 8 offline recovery codes stored in vault.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-stretch md:self-auto justify-end">
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-uppercase text-label-uppercase shadow-sm" type="button">
+                Regenerate Codes
+              </button>
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-uppercase text-label-uppercase shadow-sm" type="button">
+                Manage Keys
+              </button>
+</div>
+</div>
+<!-- Active Sessions Log -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant">AUTHORIZED SESSION CONSOLES</span>
+<button class="text-error font-label-uppercase text-[11px] hover:underline" type="button">
+                Revoke All Other Sessions
+              </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-1">
+<!-- Current Session -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[22px] text-on-surface">laptop_mac</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">macOS Sonoma • Chrome 124.0</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Portland, OR, USA • 198.51.100.44</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-uppercase text-[9px]">THIS MACHINE</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-body-sm text-[11px] text-on-surface-variant">Authenticated via WebAuthn Key</span>
+<span class="font-label-numeric text-[11px] text-on-tertiary-container font-semibold">ACTIVE NOW</span>
+</div>
+</div>
+<!-- Secondary Session -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[22px] text-on-surface">smartphone</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">iOS 17.5 • iPhone 15 Pro Max</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">AURA Admin Native App • Portland, USA</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors" title="Revoke" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-body-sm text-[11px] text-on-surface-variant">Biometric FaceID Token</span>
+<span class="font-label-numeric text-[11px] text-on-surface-variant">ACTIVE 3H AGO</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Save Banner / Floating Confirmation Bar -->
+<div class="sticky bottom-4 z-40 max-w-4xl w-[calc(100%-2rem)] mx-auto mt-space-lg mb-4" id="sticky-bar">
+<div class="p-space-md bg-inverse-surface text-inverse-on-surface rounded-2xl shadow-xl flex flex-col sm:flex-row items-center justify-between gap-space-md backdrop-blur-xl">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high/20 flex items-center justify-center text-inverse-on-surface">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-semibold leading-tight">Unsaved alterations detected</span>
+<span class="font-body-sm text-[12px] text-inverse-on-surface/75">Shipping threshold promotion altered and 2 notification routes toggled.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-stretch sm:self-auto justify-end">
+<button class="px-space-md py-2 rounded-full bg-surface-container-high/10 hover:bg-surface-container-high/20 text-inverse-on-surface font-label-uppercase text-label-uppercase transition-all" id="reset-banner-btn" type="button">
+          Reset
+        </button>
+<button class="flex items-center gap-2 px-space-lg py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all font-label-uppercase text-label-uppercase shadow-sm" id="save-banner-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+<span>Save All Configurations</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Behavior -->
+<script>
+    // Sub-navigation active state indicator on click
+    const navTabs = document.querySelectorAll('.nav-tab-item');
+    navTabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        navTabs.forEach(t => {
+          t.classList.remove('bg-primary', 'text-on-primary');
+          t.classList.add('text-on-surface-variant');
+        });
+        this.classList.add('bg-primary', 'text-on-primary');
+        this.classList.remove('text-on-surface-variant');
+      });
+    });
+
+    // Toggle switch interactivity
+    const toggleSwitches = document.querySelectorAll('.toggle-switch');
+    toggleSwitches.forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const knob = this.querySelector('span');
+        const isOff = this.classList.contains('bg-surface-container');
+        
+        if (isOff) {
+          this.classList.remove('bg-surface-container');
+          this.classList.add('bg-primary');
+          knob.classList.remove('left-1', 'bg-on-surface-variant');
+          knob.classList.add('right-1', 'bg-on-primary');
+        } else {
+          this.classList.remove('bg-primary');
+          this.classList.add('bg-surface-container');
+          knob.classList.remove('right-1', 'bg-on-primary');
+          knob.classList.add('left-1', 'bg-on-surface-variant');
+        }
+      });
+    });
+
+    // Floating bar dismiss / save interaction
+    const saveBannerBtn = document.getElementById('save-banner-btn');
+    const resetBannerBtn = document.getElementById('reset-banner-btn');
+    const topSaveBtn = document.getElementById('top-save-btn');
+    const stickyBar = document.getElementById('sticky-bar');
+    const syncTimestamp = document.getElementById('sync-timestamp');
+
+    function triggerSaveState() {
+      const now = new Date();
+      const timeStr = now.toISOString().substring(11, 19) + ' UTC';
+      syncTimestamp.textContent = 'All changes synced • ' + timeStr;
+      
+      stickyBar.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      stickyBar.style.opacity = '0';
+      stickyBar.style.transform = 'translateY(12px)';
+      setTimeout(() => {
+        stickyBar.style.display = 'none';
+      }, 300);
+    }
+
+    if (saveBannerBtn) saveBannerBtn.addEventListener('click', triggerSaveState);
+    if (topSaveBtn) topSaveBtn.addEventListener('click', triggerSaveState);
+    if (resetBannerBtn) resetBannerBtn.addEventListener('click', () => {
+      stickyBar.style.display = 'none';
+    });
+
+    // Keyboard shortcut handler for Command+S
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 's') {
+        e.preventDefault();
+        triggerSaveState();
+      }
+    });
+  </script>
+</div></main></div><script src="../js/admin.js"></script>
+</body></html>

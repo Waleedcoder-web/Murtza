@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><title>AURA Lab Ops // Commerce Operations Dashboard</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-lowest": "#ffffff", "on-tertiary-container": "#188ace", "on-surface": "#0b1c30", "tertiary": "#000000", "background": "#f8f9ff", "secondary-fixed": "#e1e2e4", "on-surface-variant": "#44474a", "primary-fixed-dim": "#c4c7cb", "inverse-on-surface": "#eaf1ff", "on-secondary-fixed-variant": "#444749", "tertiary-container": "#001d31", "on-secondary-container": "#606365", "surface-container-high": "#dce9ff", "inverse-surface": "#213145", "on-background": "#0b1c30", "on-error-container": "#93000a", "surface-container": "#e5eeff", "secondary": "#5c5f60", "outline": "#75777a", "on-primary": "#ffffff", "tertiary-fixed": "#cce5ff", "tertiary-fixed-dim": "#93ccff", "on-tertiary-fixed": "#001d31", "primary-fixed": "#e0e3e7", "surface-bright": "#f8f9ff", "surface-container-highest": "#d3e4fe", "on-error": "#ffffff", "on-primary-fixed": "#181c1f", "on-primary-fixed-variant": "#43474b", "secondary-fixed-dim": "#c5c6c8", "on-secondary-fixed": "#191c1e", "on-tertiary": "#ffffff", "surface-variant": "#d3e4fe", "inverse-primary": "#c4c7cb", "outline-variant": "#c5c6ca", "surface-container-low": "#eff4ff", "primary": "#000000", "error": "#ba1a1a", "surface-dim": "#cbdbf5", "error-container": "#ffdad6", "surface-tint": "#5b5f62", "on-primary-container": "#818488", "on-tertiary-fixed-variant": "#004b73", "secondary-container": "#dee0e2", "primary-container": "#181c1f", "on-secondary": "#ffffff", "surface": "#f8f9ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "margin": "3rem", "gutter-mobile": "1rem", "margin-mobile": "1.25rem", "space-sm": "0.5rem", "space-md": "1rem" }, "fontFamily": { "headline-md": ["Space Grotesk"], "body-md": ["Inter"], "display-hero": ["Space Grotesk"], "label-uppercase": ["Space Grotesk"], "headline-xl": ["Space Grotesk"], "display-hero-mobile": ["Space Grotesk"], "body-lg": ["Inter"], "headline-xl-mobile": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "body-sm": ["Inter"], "label-numeric": ["Space Grotesk"], "headline-lg": ["Space Grotesk"] }, "fontSize": { "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}], "display-hero": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "label-uppercase": ["11px", {"lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "700"}], "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "display-hero-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400"}], "headline-xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600"}], "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}], "label-numeric": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}] } } } };</script><link rel="stylesheet" href="../css/style.css">
+</head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="Minimalist geometric athletic brand mark for premium sportswear company 'AURA', featuring sleek aerodynamic overlapping wings or dynamic kinetic chevron in crisp black and pure white vector aesthetic. Brand logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XbTzT4xxlLPcoc8jSv7hw5AGFE-c1rnfDjXo2xT3mvdIKab0cV7hBtl8MPZCfMEsELh2WU2ig_eZ1CP8OTEwCJiMfOjBZ-pvR5GD0ykR0Jf8LJww6dTkaUzfYuai31TPW4JTyNdPv_UeiUJaTA3h7UhvNuoM2vJH4YHoySocVhxoXcGXP9ygRvU4n8xrbG1JRAAJ_S8HoLzMbvVMnsXpoDw93b1_XDZ4mT7cJINSIlwnYgZpiP67tt1cQ"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">AURA</span><span class="font-label-uppercase text-label-uppercase text-on-surface-variant">LAB SYSTEM</span></div></div><div class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-uppercase text-label-uppercase">OPS // ADMIN</div></div><div class="px-space-lg py-space-sm"><div class="h-[1px] w-full bg-surface-container"></div></div><nav class="flex flex-col gap-1 px-space-md py-space-xs" data-active-classes="bg-primary text-on-primary font-medium rounded-lg shadow-sm">
+<a class="flex items-center gap-space-sm px-space-md py-2.5 transition-colors bg-primary text-on-primary font-medium rounded-lg shadow-sm" data-path="dashboard" href="index.html" aria-current="page"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="products" href="products.html"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Products</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="product-edit" href="product-edit.html"><span class="material-symbols-outlined text-[20px]">add_box</span><span>Add / Edit Product</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="categories" href="categories.html"><span class="material-symbols-outlined text-[20px]">category</span><span>Categories</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="orders" href="orders.html"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span>Orders</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="customers" href="customers.html"><span class="material-symbols-outlined text-[20px]">group</span><span>Customers</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="analytics" href="analytics.html"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Analytics</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="settings" href="settings.html"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings</span></a>
+<div class="my-2 border-t border-surface-container"></div>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-primary hover:bg-surface-container-low transition-colors font-label-uppercase text-label-uppercase font-bold" href="../index.html">
+  <span class="material-symbols-outlined text-[20px] text-on-tertiary-container">storefront</span><span>← View Storefront</span>
+</a>
+</nav></div><div class="flex flex-col px-space-md pb-space-lg"><div class="px-space-sm pb-space-sm"><div class="h-[1px] w-full bg-surface-container"></div></div><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="relative flex items-center justify-center"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-on-tertiary-container rounded-full ring-2 ring-surface-container-lowest"></span></div><div class="flex flex-col"><span class="font-headline-sm text-body-sm font-semibold text-on-surface leading-tight">Elena Rostova</span><span class="font-label-uppercase text-label-uppercase text-on-surface-variant">Ops Lead</span></div></div><div class="flex items-center gap-1"><button aria-label="Notifications" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span></button><button aria-label="Logout" class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">logout</span></button></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-uppercase text-label-uppercase text-on-surface-variant"><span class="text-on-surface font-semibold">System Telemetry</span><span>//</span><span>Commerce Operations</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-uppercase text-label-uppercase"><span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span><span>Operational • Zurich EU-1</span></div></div><div class="flex items-center gap-space-md"><div class="relative w-80 hidden md:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full h-9 pl-9 pr-3 rounded-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest transition-all" id="admin-quick-search" placeholder="Search orders, SKU, customers (⌘K)..." type="text"/></div><a href="product-edit.html"  class="flex items-center gap-space-xs px-space-md py-2 rounded-full bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary transition-all font-label-uppercase text-label-uppercase shadow-sm" type="button"><span class="material-symbols-outlined text-[16px]">add</span><span>New Product</span></a><div class="relative flex items-center"><button aria-label="Notifications indicator" class="relative p-2 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-on-tertiary-container ring-2 ring-surface-container-lowest"></span></button></div><div class="w-[1px] h-6 bg-surface-container"></div><div class="flex items-center gap-space-xs cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg lg:p-margin space-y-space-xl max-w-[1440px] mx-auto w-full">
+<!-- 1. Header & Global Telemetry Controls -->
+<section class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-lg">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-uppercase text-label-uppercase">
+            REAL-TIME COMMERCE TELEMETRY
+          </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-uppercase text-label-uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+            LIVE SYNC // ZURICH NODE
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Operations Overview</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Global performance metrics, capsule replenishment statuses, and real-time order intake.</p>
+</div>
+<!-- Controls and Actions -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Timeframe Segmented Control -->
+<div class="inline-flex p-1 rounded-full bg-surface-container-low shadow-sm">
+<button class="px-3.5 py-1.5 rounded-full font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-on-surface transition-colors" type="button">Today</button>
+<button class="px-3.5 py-1.5 rounded-full font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-on-surface transition-colors" type="button">7 Days</button>
+<button class="px-3.5 py-1.5 rounded-full font-label-uppercase text-label-uppercase bg-primary text-on-primary shadow-sm" type="button">30 Days</button>
+<button class="px-3.5 py-1.5 rounded-full font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-on-surface transition-colors" type="button">12 Months</button>
+<button class="px-3.5 py-1.5 rounded-full font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-on-surface transition-colors" type="button">Custom</button>
+</div>
+<!-- Utility CTAs -->
+<div class="flex items-center gap-space-xs">
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-uppercase text-label-uppercase shadow-sm hover:bg-surface-container-low transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Telemetry</span>
+</button>
+<a href="product-edit.html"  class="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-primary text-on-primary font-label-uppercase text-label-uppercase shadow-sm hover:bg-primary-container transition-all" type="button"><span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add Product</span></a>
+</div>
+</div>
+</section>
+<!-- 2. Primary KPI Stat Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1: Total Sales -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(11,15,18,0.04)] hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant">TOTAL GROSS REVENUE</span>
+<div class="mt-2 font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">$148,920.40</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between border-t border-transparent bg-surface-container-low/40 px-3 py-2 rounded-lg">
+<div class="flex items-center gap-1">
+<span class="inline-flex items-center text-on-tertiary-container font-label-numeric text-label-numeric font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>+18.4%
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">vs prev 30d</span>
+</div>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant font-semibold">AOV: $142.20</span>
+</div>
+</div>
+<!-- Card 2: Total Orders -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(11,15,18,0.04)] hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant">COMPLETED ORDERS</span>
+<div class="mt-2 font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">1,048</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">package_2</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/40 px-3 py-2 rounded-lg">
+<div class="flex items-center gap-1">
+<span class="inline-flex items-center text-on-tertiary-container font-label-numeric text-label-numeric font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>+12.1%
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">intake</span>
+</div>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant font-semibold">98.2% Velocity</span>
+</div>
+</div>
+<!-- Card 3: Active Products & Capsules -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(11,15,18,0.04)] hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant">ACTIVE CATALOGUE</span>
+<div class="mt-2 font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">64 SKUs</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/40 px-3 py-2 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">4 active drops</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-error font-label-uppercase text-label-uppercase font-semibold">
+            8 Low Stock
+          </span>
+</div>
+</div>
+<!-- Card 4: Athletes & Customers -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(11,15,18,0.04)] hover:shadow-md transition-all flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant">COMMUNITY ATHLETES</span>
+<div class="mt-2 font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">8,420</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/40 px-3 py-2 rounded-lg">
+<div class="flex items-center gap-1">
+<span class="inline-flex items-center text-on-tertiary-container font-label-numeric text-label-numeric font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>+24.6%
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">acquisition</span>
+</div>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant font-semibold">38.4% Repeat</span>
+</div>
+</div>
+</section>
+<!-- 3. Telemetry Analytics & Revenue Trends Section -->
+<section class="p-space-lg lg:p-space-xl rounded-xl bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(11,15,18,0.04)] flex flex-col gap-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Revenue &amp; Order Flow Telemetry</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-uppercase text-label-uppercase">OCTOBER CYCLE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">High-frequency order ingestion tracked against 30-day trailing volume.</p>
+</div>
+<!-- Metric Switchers -->
+<div class="flex items-center gap-space-xs p-1 rounded-lg bg-surface-container-low self-start lg:self-auto">
+<button class="px-3 py-1.5 rounded font-label-uppercase text-label-uppercase bg-surface-container-lowest text-on-surface font-semibold shadow-sm" type="button">
+            Gross Revenue ($)
+          </button>
+<button class="px-3 py-1.5 rounded font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+            Net Volume
+          </button>
+<button class="px-3 py-1.5 rounded font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+            Conversion (3.8%)
+          </button>
+</div>
+</div>
+<!-- Chart + Breakdown Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- SVG Interactive Area Chart (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col justify-between">
+<div class="relative w-full h-72">
+<!-- Inline High-Precision Technical SVG Chart -->
+<svg class="w-full h-full overflow-visible" fill="none" preserveaspectratio="none" viewbox="0 0 700 240">
+<defs>
+<lineargradient id="primaryAreaGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0b1c30" stop-opacity="0.16"></stop>
+<stop offset="100%" stop-color="#0b1c30" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="pulseGlow" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#188ace"></stop>
+<stop offset="100%" stop-color="#0b1c30"></stop>
+</lineargradient>
+</defs>
+<!-- Grid guidelines -->
+<line stroke="#eff4ff" stroke-width="1" x1="0" x2="700" y1="40" y2="40"></line>
+<line stroke="#eff4ff" stroke-width="1" x1="0" x2="700" y1="100" y2="100"></line>
+<line stroke="#eff4ff" stroke-width="1" x1="0" x2="700" y1="160" y2="160"></line>
+<line stroke="#e5eeff" stroke-width="1.5" x1="0" x2="700" y1="220" y2="220"></line>
+<!-- Previous Period Line (Dashed) -->
+<path d="M0,180 C80,170 140,195 210,165 C280,135 340,150 420,130 C500,110 570,125 700,90" fill="none" opacity="0.6" stroke="#75777a" stroke-dasharray="4 4" stroke-width="1.5"></path>
+<!-- Area Fill Current Period -->
+<path d="M0,170 C90,160 160,130 230,140 C300,150 360,90 440,75 C510,60 560,40 620,30 C660,25 680,45 700,50 L700,220 L0,220 Z" fill="url(#primaryAreaGrad)"></path>
+<!-- Current Period Line -->
+<path d="M0,170 C90,160 160,130 230,140 C300,150 360,90 440,75 C510,60 560,40 620,30 C660,25 680,45 700,50" fill="none" stroke="#0b1c30" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Active Peak Marker on Oct 22 (at x=560, y=40) -->
+<line stroke="#188ace" stroke-dasharray="2 2" stroke-width="1.5" x1="560" x2="560" y1="40" y2="220"></line>
+<circle cx="560" cy="40" fill="#188ace" r="5"></circle>
+<circle class="animate-ping" cx="560" cy="40" opacity="0.3" r="9" stroke="#188ace" stroke-width="1.5"></circle>
+</svg>
+<!-- Floating Micro Tooltip over Peak -->
+<div class="absolute left-[72%] top-2 -translate-x-1/2 p-3 rounded-lg bg-surface-container-lowest shadow-lg flex flex-col gap-0.5 pointer-events-none">
+<span class="font-label-uppercase text-[10px] text-on-surface-variant uppercase tracking-wider">Oct 22 • Capsule Release</span>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">$24,850.00</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-tertiary-container font-label-numeric text-[11px] font-semibold">+28%</span>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Storm Shell Vol. 2 Launch spike</span>
+</div>
+</div>
+<!-- X-Axis Labels -->
+<div class="flex justify-between items-center pt-3 text-on-surface-variant font-label-numeric text-label-numeric">
+<span>Oct 01</span>
+<span>Oct 08</span>
+<span>Oct 15</span>
+<span class="text-on-surface font-semibold">Oct 22 (Drop)</span>
+<span>Oct 29</span>
+<span>Today</span>
+</div>
+</div>
+<!-- Discipline / Capsule Breakdown Telemetry (4 Cols) -->
+<div class="lg:col-span-4 p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase text-on-surface">DISCIPLINE SPLIT</span>
+<span class="font-label-numeric text-label-numeric text-on-surface-variant font-semibold">30-DAY SHARE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Weighted inventory velocity indexed by training discipline.</p>
+</div>
+<div class="space-y-3.5">
+<!-- Metric 1 -->
+<div>
+<div class="flex justify-between items-center font-body-sm text-body-sm mb-1.5">
+<span class="text-on-surface font-semibold">Outerwear Lab</span>
+<span class="font-label-numeric text-label-numeric text-on-surface">42% • $62,546</span>
+</div>
+<div class="h-1.5 w-full rounded-full bg-surface-container">
+<div class="h-1.5 rounded-full bg-primary" style="width: 42%;"></div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div>
+<div class="flex justify-between items-center font-body-sm text-body-sm mb-1.5">
+<span class="text-on-surface font-semibold">Running Essential</span>
+<span class="font-label-numeric text-label-numeric text-on-surface">28% • $41,697</span>
+</div>
+<div class="h-1.5 w-full rounded-full bg-surface-container">
+<div class="h-1.5 rounded-full bg-primary" style="width: 28%;"></div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div>
+<div class="flex justify-between items-center font-body-sm text-body-sm mb-1.5">
+<span class="text-on-surface font-semibold">Training / Conditioning</span>
+<span class="font-label-numeric text-label-numeric text-on-surface">22% • $32,762</span>
+</div>
+<div class="h-1.5 w-full rounded-full bg-surface-container">
+<div class="h-1.5 rounded-full bg-primary" style="width: 22%;"></div>
+</div>
+</div>
+<!-- Metric 4 -->
+<div>
+<div class="flex justify-between items-center font-body-sm text-body-sm mb-1.5">
+<span class="text-on-surface font-semibold">Mobility &amp; Base Layers</span>
+<span class="font-label-numeric text-label-numeric text-on-surface">8% • $11,915</span>
+</div>
+<div class="h-1.5 w-full rounded-full bg-surface-container">
+<div class="h-1.5 rounded-full bg-on-tertiary-container" style="width: 8%;"></div>
+</div>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-uppercase text-label-uppercase hover:bg-surface-container transition-all flex items-center justify-center gap-1" type="button">
+<span>View In-Depth Analytics</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Top Performing Products & Low Stock Watchlist Split -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left Column: Top Performing Products (7 Cols / 60%) -->
+<div class="lg:col-span-7 p-space-lg rounded-xl bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(11,15,18,0.04)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-md">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Top Performing Capsules</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ranked by gross sales volume and unit momentum</p>
+</div>
+<button class="font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-on-surface flex items-center gap-1 transition-colors" type="button">
+<span>All SKUs</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</button>
+</div>
+<!-- Product List Table Rows -->
+<div class="divide-y divide-transparent space-y-2">
+<!-- Item 1: Storm Shell -->
+<div class="p-space-sm rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-14 h-16 rounded-lg overflow-hidden bg-surface-container-lowest flex-shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Technical high-performance waterproof obsidian black storm shell hooded jacket with taped seams and sleek minimalist zip details, floating against minimalist light gray background with soft studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp7DdImKtQWSwYhK-DnpPeKWQNEq_h7Zsl-Ya6pTL9WIdZ756i4J909OGH_4vdNDC7ub_NaWcSY4NV3D7m6PnMjVKLUTkPCJW8WC35O26oL9kCE4z591hqexrwRq_5IguJZwQLDdkGFHDiENdnG927eiXnKyE4vE1yab4eFkpDloqzqJQBv-3DRQjeuGutuEbb_jXcyYn9KpIbhifDwmM0HuwdXEaftfOr36oN3_c7cZuGwujHOLbrPw"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">AURA Aerovent™ Storm Shell</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-surface-container-high text-on-tertiary-container font-label-uppercase">DROP 01</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Outerwear</span>
+<span>•</span>
+<span class="font-label-numeric">482 sold</span>
+<span>•</span>
+<span class="text-on-surface font-semibold">42 in stock</span>
+</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-headline-sm text-body-md font-semibold text-on-surface">$106,040</div>
+<span class="font-label-numeric text-[12px] text-on-tertiary-container font-semibold">+34% spike</span>
+</div>
+</div>
+<!-- Item 2: Essential Tee -->
+<div class="p-space-sm rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-14 h-16 rounded-lg overflow-hidden bg-surface-container-lowest flex-shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Dark charcoal lightweight aerated running tee shirt made of micro-perforated moisture wicking technical fabric, floating centered with subtle shadow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_J3faP7ENZyhTYiLNgln7q7kRjvytMk2OImGCxbJwDzLM_2SZ8anPRg-nwHMfVoztm0luiCy3CMADmFYt7UkeEMhHvqaMmiFujhARY_X15TWV7rfJuFR690a72kCa6ZhmCMv2TSp6A3gP81QEQJkjKKjE6avtLSGFHxPgVTluF94ewErXUnuzGNrHCW37zisAd6cFOaRHMJ0cBvCSpWNUJHtOIF-0aC-AgJZDbYQnotNNZoCd_E8u_Q"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Performance Essential Training Tee</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Running Lab</span>
+<span>•</span>
+<span class="font-label-numeric">326 sold</span>
+<span>•</span>
+<span class="text-on-surface font-semibold">18 in stock</span>
+</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-headline-sm text-body-md font-semibold text-on-surface">$23,472</div>
+<span class="font-label-numeric text-[12px] text-on-tertiary-container font-semibold">+19% steady</span>
+</div>
+</div>
+<!-- Item 3: Compression Set -->
+<div class="p-space-sm rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-14 h-16 rounded-lg overflow-hidden bg-surface-container-lowest flex-shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Athletic female athlete wearing slate blue seamless technical compression sports bra and high-waisted performance leggings in a high-end minimalist gym studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXMF9_eG4zslZorWh3lxMXVbfAsMpVMXcOE5bp6_WIdC4X6Q3mJubawJUISDgHjHdC_Jn3xww5FmcegFFnLV5v10Yaru2RjLCgv3mSIsw1Sv7Ng9twU0qKpkT124SgTPTY3jldRqshCCSYhNPYTlhh8rtfwS4GN687lylJ1SiFDXn_6ZFwwrfQ2HGePb9CZN49RsvjZeRC88vh9KEMWPsJ2GophoQvKX5l8TvxGSfFWnwrr0E-KTcsXQ"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Sculpt Seamless Compression Set</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Training</span>
+<span>•</span>
+<span class="font-label-numeric">240 sets</span>
+<span>•</span>
+<span class="text-on-surface font-semibold">29 in stock</span>
+</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-headline-sm text-body-md font-semibold text-on-surface">$34,800</div>
+<span class="font-label-numeric text-[12px] text-on-tertiary-container font-semibold">+15% restock</span>
+</div>
+</div>
+<!-- Item 4: Kinetic Shorts -->
+<div class="p-space-sm rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-14 h-16 rounded-lg overflow-hidden bg-surface-container-lowest flex-shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Ultralight technical running shorts in matte black finish with bonded hems, reflective brand accents, and ergonomic compression liner on pure clean backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAz9YXTYmhbgpEibOmh6BSJ81pw1OmepeXs4PleFEoLaTumwiiwVeKPwfzviOnIkgXmJCGZwVua-HNIDg2BRZd8C1kemcR7UB1df1SYeVc3kuQ_E0ZeU_USzt710ev9SrLe-OKao0cBy31Lj7CTi_8FmjsYZY_6dgCqNF-D6JGUa5I003J6hIhS4mOBMlQjstdv39k57_ar1jLzFWmyw2J9RMA0vjHLzt3VZGzzsott3l-9rxrpnQqNw"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface truncate">Kinetic Pro Carbon Shorts</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Running Lab</span>
+<span>•</span>
+<span class="font-label-numeric">198 sold</span>
+<span>•</span>
+<span class="text-error font-semibold">8 in stock (Low)</span>
+</div>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<div class="font-headline-sm text-body-md font-semibold text-on-surface">$17,424</div>
+<span class="font-label-numeric text-[12px] text-on-surface-variant font-semibold">+8% steady</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Critical Low Stock Watchlist (5 Cols / 40%) -->
+<div class="lg:col-span-5 p-space-lg rounded-xl bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(11,15,18,0.04)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Inventory Depletion</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-uppercase text-[10px]">
+                  4 CRITICAL
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Automated threshold triggers for supply chain replenishment.</p>
+</div>
+</div>
+<!-- Alert Cards -->
+<div class="space-y-3">
+<!-- Alert 1 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Kinetic Pro Shorts (M)</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant">8 remaining // Safety threshold: 20</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-uppercase text-[10px] font-semibold">
+                  Critical
+                </span>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-2 flex-1 rounded-full bg-surface-container">
+<div class="h-2 rounded-full bg-error" style="width: 25%;"></div>
+</div>
+<button class="px-3 py-1 rounded bg-primary text-on-primary font-label-uppercase text-[10px] hover:bg-primary-container transition-all" type="button">
+                  Reorder
+                </button>
+</div>
+</div>
+<!-- Alert 2 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Essential Training Tee (Obsidian, S)</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant">7 remaining // Safety threshold: 25</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-uppercase text-[10px] font-semibold">
+                  Critical
+                </span>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-2 flex-1 rounded-full bg-surface-container">
+<div class="h-2 rounded-full bg-error" style="width: 22%;"></div>
+</div>
+<button class="px-3 py-1 rounded bg-primary text-on-primary font-label-uppercase text-[10px] hover:bg-primary-container transition-all" type="button">
+                  Reorder
+                </button>
+</div>
+</div>
+<!-- Alert 3 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Aerovent™ Storm Shell (Graphene, L)</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant">12 remaining // Safety threshold: 30</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-uppercase text-[10px] font-semibold">
+                  Low Stock
+                </span>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-2 flex-1 rounded-full bg-surface-container">
+<div class="h-2 rounded-full bg-secondary" style="width: 40%;"></div>
+</div>
+<button class="px-3 py-1 rounded bg-primary text-on-primary font-label-uppercase text-[10px] hover:bg-primary-container transition-all" type="button">
+                  Reorder
+                </button>
+</div>
+</div>
+<!-- Alert 4 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">MotionFlow Bra (Mineral Blue, M)</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant">15 remaining // Safety threshold: 25</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-uppercase text-[10px] font-semibold">
+                  Low Stock
+                </span>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-2 flex-1 rounded-full bg-surface-container">
+<div class="h-2 rounded-full bg-secondary" style="width: 50%;"></div>
+</div>
+<button class="px-3 py-1 rounded bg-primary text-on-primary font-label-uppercase text-[10px] hover:bg-primary-container transition-all" type="button">
+                  Reorder
+                </button>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md">
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-tertiary-container text-[18px]">autorenew</span>
+<span class="font-body-sm text-body-sm text-on-surface">Auto-replenishment configured with Milan supplier.</span>
+</div>
+<span class="font-label-uppercase text-label-uppercase text-on-tertiary-container font-semibold">ACTIVE</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Recent Orders Stream Table Section -->
+<section class="p-space-lg lg:p-space-xl rounded-xl bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(11,15,18,0.04)] space-y-space-md">
+<!-- Section Header & Filter Controls -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Recent Athlete Orders</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-uppercase text-label-uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-ping"></span>
+              STREAMING LIVE
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Verified athlete acquisitions and fulfillment dispatches across Europe and North America.</p>
+</div>
+<!-- Filter and Search Box -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[16px]">search</span>
+<input class="w-full h-8 pl-8 pr-3 rounded-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest transition-all" placeholder="Filter order #, athlete..." type="text"/>
+</div>
+<div class="inline-flex p-1 rounded-full bg-surface-container-low">
+<button class="px-3 py-1 rounded-full font-label-uppercase text-[10px] bg-primary text-on-primary" type="button">All</button>
+<button class="px-3 py-1 rounded-full font-label-uppercase text-[10px] text-on-surface-variant hover:text-on-surface" type="button">Delivered</button>
+<button class="px-3 py-1 rounded-full font-label-uppercase text-[10px] text-on-surface-variant hover:text-on-surface" type="button">Processing</button>
+<button class="px-3 py-1 rounded-full font-label-uppercase text-[10px] text-on-surface-variant hover:text-on-surface" type="button">Shipped</button>
+</div>
+</div>
+</div>
+<!-- Orders Table Container -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-uppercase text-label-uppercase">
+<th class="py-3 px-4 rounded-l-lg">Order ID</th>
+<th class="py-3 px-4">Athlete / Customer</th>
+<th class="py-3 px-4">Capsule / Products</th>
+<th class="py-3 px-4">Timestamp</th>
+<th class="py-3 px-4">Amount</th>
+<th class="py-3 px-4">Payment</th>
+<th class="py-3 px-4">Fulfillment</th>
+<th class="py-3 px-4 rounded-r-lg text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent font-body-sm text-body-sm">
+<!-- Order 1 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3.5 px-4 font-label-numeric text-label-numeric font-semibold text-on-surface">#AUR-9842</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-body-sm font-semibold text-on-surface">
+                    LK
+                  </div>
+<div>
+<div class="font-semibold text-on-surface">Lars Kjellberg</div>
+<div class="font-body-sm text-on-surface-variant text-[12px]">lars.k@nordicrun.se</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="text-on-surface">AEROVENT™ Storm Shell (Graphene, L) + 1 more</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-label-numeric text-on-surface-variant text-[12px]">Today, 14:32</td>
+<td class="py-3.5 px-4 font-label-numeric text-label-numeric font-semibold text-on-surface">$348.00</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-tertiary-container font-label-uppercase text-[10px] font-semibold">
+                  Paid
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-uppercase text-[10px] font-semibold">
+                  Processing
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button aria-label="Order Details" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Order 2 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3.5 px-4 font-label-numeric text-label-numeric font-semibold text-on-surface">#AUR-9841</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-body-sm font-semibold text-on-surface">
+                    SM
+                  </div>
+<div>
+<div class="font-semibold text-on-surface">Sophie Moreau</div>
+<div class="font-body-sm text-on-surface-variant text-[12px]">s.moreau@chamonix.fr</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="text-on-surface">Sculpt Seamless Compression Set (Slate, S)</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-label-numeric text-on-surface-variant text-[12px]">Today, 13:10</td>
+<td class="py-3.5 px-4 font-label-numeric text-label-numeric font-semibold text-on-surface">$145.00</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-tertiary-container font-label-uppercase text-[10px] font-semibold">
+                  Paid
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-uppercase text-[10px] font-semibold">
+                  Shipped
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button aria-label="Order Details" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Order 3 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3.5 px-4 font-label-numeric text-label-numeric font-semibold text-on-surface">#AUR-9840</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-body-sm font-semibold text-on-surface">
+                    DA
+                  </div>
+<div>
+<div class="font-semibold text-on-surface">Devin Archer</div>
+<div class="font-body-sm text-on-surface-variant text-[12px]">darcher@vanguard.io</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="text-on-surface">Kinetic Pro Shorts x 2 (Obsidian, M)</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-label-numeric text-on-surface-variant text-[12px]">Today, 11:45</td>
+<td class="py-3.5 px-4 font-label-numeric text-label-numeric font-semibold text-on-surface">$176.00</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-tertiary-container font-label-uppercase text-[10px] font-semibold">
+                  Paid
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-uppercase text-[10px] font-semibold">
+                  Delivered
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button aria-label="Order Details" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Order 4 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3.5 px-4 font-label-numeric text-label-numeric font-semibold text-on-surface">#AUR-9839</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-body-sm font-semibold text-on-surface">
+                    MA
+                  </div>
+<div>
+<div class="font-semibold text-on-surface">Matteo Antonelli</div>
+<div class="font-body-sm text-on-surface-variant text-[12px]">m.antonelli@milan.it</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="text-on-surface">Performance Essential Tee (S) + Cap</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-label-numeric text-on-surface-variant text-[12px]">Yesterday, 19:20</td>
+<td class="py-3.5 px-4 font-label-numeric text-label-numeric font-semibold text-on-surface">$114.00</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-tertiary-container font-label-uppercase text-[10px] font-semibold">
+                  Paid
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-uppercase text-[10px] font-semibold">
+                  Delivered
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button aria-label="Order Details" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Order 5 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3.5 px-4 font-label-numeric text-label-numeric font-semibold text-on-surface">#AUR-9838</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-body-sm font-semibold text-on-surface">
+                    CW
+                  </div>
+<div>
+<div class="font-semibold text-on-surface">Clara Weber</div>
+<div class="font-body-sm text-on-surface-variant text-[12px]">weber.c@berlin.de</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="text-on-surface">AEROVENT™ Storm Shell (Graphene, S)</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-label-numeric text-on-surface-variant text-[12px]">Yesterday, 17:05</td>
+<td class="py-3.5 px-4 font-label-numeric text-label-numeric font-semibold text-on-surface">$220.00</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-tertiary-container font-label-uppercase text-[10px] font-semibold">
+                  Paid
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-uppercase text-[10px] font-semibold">
+                  Shipped
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button aria-label="Order Details" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Order 6 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3.5 px-4 font-label-numeric text-label-numeric font-semibold text-on-surface">#AUR-9837</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-body-sm font-semibold text-on-surface">
+                    TH
+                  </div>
+<div>
+<div class="font-semibold text-on-surface">Tariq Haidar</div>
+<div class="font-body-sm text-on-surface-variant text-[12px]">tariq.h@athletic.ch</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="text-on-surface">Performance Essential Tee (Charcoal, M)</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-label-numeric text-on-surface-variant text-[12px]">Yesterday, 14:18</td>
+<td class="py-3.5 px-4 font-label-numeric text-label-numeric font-semibold text-on-surface">$72.00</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-uppercase text-[10px] font-semibold">
+                  Authorized
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-uppercase text-[10px] font-semibold">
+                  Pending
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button aria-label="Order Details" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer & Pagination -->
+<div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+          Showing <span class="text-on-surface font-semibold">1-6</span> of <span class="text-on-surface font-semibold">1,048</span> athlete orders
+        </div>
+<div class="flex items-center gap-space-xs">
+<button class="p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-numeric text-label-numeric font-semibold" type="button">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-label-numeric text-label-numeric" type="button">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-label-numeric text-label-numeric" type="button">3</button>
+<span class="px-1 text-on-surface-variant">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-label-numeric text-label-numeric" type="button">175</button>
+<button class="p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</div></main></div><script src="../js/admin.js"></script>
+</body></html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <g transform="translate(4, 8)">
+    <!-- Aerodynamic dynamic mark -->
+    <path d="M4 28L18 4H26L12 28H4Z" fill="#0B0F12" />
+    <path d="M16 28L30 4H38L24 28H16Z" fill="#0EA5E9" />
+    <path d="M28 28L42 4H50L36 28H28Z" fill="#0B0F12" opacity="0.3" />
+  </g>
+  <text x="64" y="30" font-family="system-ui, -apple-system, 'SF Pro Display', Inter, sans-serif" font-size="22" font-weight="900" letter-spacing="4" fill="#0B0F12">AURA</text>
+  <text x="146" y="30" font-family="system-ui, -apple-system, 'SF Pro Display', Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="3" fill="#64748B">LAB</text>
+</svg>
