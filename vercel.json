@@ -1,15 +1,5 @@
 {
+  "outputDirectory": "frontend",
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/", "destination": "/frontend/index.html" },
-    { "source": "/categories", "destination": "/frontend/categories.html" },
-    { "source": "/categories.html", "destination": "/frontend/categories.html" },
-    { "source": "/product", "destination": "/frontend/product.html" },
-    { "source": "/product.html", "destination": "/frontend/product.html" },
-    { "source": "/admin/:path*", "destination": "/frontend/admin/:path*" },
-    { "source": "/css/:path*", "destination": "/frontend/css/:path*" },
-    { "source": "/js/:path*", "destination": "/frontend/js/:path*" },
-    { "source": "/assets/:path*", "destination": "/frontend/assets/:path*" },
-    { "source": "/(.*)", "destination": "/frontend/$1" }
-  ]
+  "trailingSlash": false
 }
