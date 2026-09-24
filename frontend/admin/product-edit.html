@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><title>AURA Lab Ops // Add & Edit Product Studio</title><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-lowest": "#ffffff", "on-tertiary-container": "#188ace", "on-surface": "#0b1c30", "tertiary": "#000000", "background": "#f8f9ff", "secondary-fixed": "#e1e2e4", "on-surface-variant": "#44474a", "primary-fixed-dim": "#c4c7cb", "inverse-on-surface": "#eaf1ff", "on-secondary-fixed-variant": "#444749", "tertiary-container": "#001d31", "on-secondary-container": "#606365", "surface-container-high": "#dce9ff", "inverse-surface": "#213145", "on-background": "#0b1c30", "on-error-container": "#93000a", "surface-container": "#e5eeff", "secondary": "#5c5f60", "outline": "#75777a", "on-primary": "#ffffff", "tertiary-fixed": "#cce5ff", "tertiary-fixed-dim": "#93ccff", "on-tertiary-fixed": "#001d31", "primary-fixed": "#e0e3e7", "surface-bright": "#f8f9ff", "surface-container-highest": "#d3e4fe", "on-error": "#ffffff", "on-primary-fixed": "#181c1f", "on-primary-fixed-variant": "#43474b", "secondary-fixed-dim": "#c5c6c8", "on-secondary-fixed": "#191c1e", "on-tertiary": "#ffffff", "surface-variant": "#d3e4fe", "inverse-primary": "#c4c7cb", "outline-variant": "#c5c6ca", "surface-container-low": "#eff4ff", "primary": "#000000", "error": "#ba1a1a", "surface-dim": "#cbdbf5", "error-container": "#ffdad6", "surface-tint": "#5b5f62", "on-primary-container": "#818488", "on-tertiary-fixed-variant": "#004b73", "secondary-container": "#dee0e2", "primary-container": "#181c1f", "on-secondary": "#ffffff", "surface": "#f8f9ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "margin": "3rem", "gutter-mobile": "1rem", "margin-mobile": "1.25rem", "space-sm": "0.5rem", "space-md": "1rem" }, "fontFamily": { "headline-md": ["Space Grotesk"], "body-md": ["Inter"], "display-hero": ["Space Grotesk"], "label-uppercase": ["Space Grotesk"], "headline-xl": ["Space Grotesk"], "display-hero-mobile": ["Space Grotesk"], "body-lg": ["Inter"], "headline-xl-mobile": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "body-sm": ["Inter"], "label-numeric": ["Space Grotesk"], "headline-lg": ["Space Grotesk"] }, "fontSize": { "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}], "display-hero": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "label-uppercase": ["11px", {"lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "700"}], "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "display-hero-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400"}], "headline-xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "headline-sm": ["18px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600"}], "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}], "label-numeric": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}] } } } };</script><link rel="stylesheet" href="../css/style.css">
+</head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="Minimalist geometric athletic brand mark for premium sportswear company 'AURA', featuring sleek aerodynamic overlapping wings or dynamic kinetic chevron in crisp black and pure white vector aesthetic. Brand logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XbTzT4xxlLPcoc8jSv7hw5AGFE-c1rnfDjXo2xT3mvdIKab0cV7hBtl8MPZCfMEsELh2WU2ig_eZ1CP8OTEwCJiMfOjBZ-pvR5GD0ykR0Jf8LJww6dTkaUzfYuai31TPW4JTyNdPv_UeiUJaTA3h7UhvNuoM2vJH4YHoySocVhxoXcGXP9ygRvU4n8xrbG1JRAAJ_S8HoLzMbvVMnsXpoDw93b1_XDZ4mT7cJINSIlwnYgZpiP67tt1cQ"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">AURA</span><span class="font-label-uppercase text-label-uppercase text-on-surface-variant">LAB SYSTEM</span></div></div><div class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-uppercase text-label-uppercase">OPS // ADMIN</div></div><div class="px-space-lg py-space-sm"><div class="h-[1px] w-full bg-surface-container"></div></div><nav class="flex flex-col gap-1 px-space-md py-space-xs" data-active-classes="bg-primary text-on-primary font-medium rounded-lg shadow-sm">
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="dashboard" href="index.html"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="products" href="products.html"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Products</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 transition-colors bg-primary text-on-primary font-medium rounded-lg shadow-sm" data-path="product-edit" href="product-edit.html" aria-current="page"><span class="material-symbols-outlined text-[20px]">add_box</span><span>Add / Edit Product</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="categories" href="categories.html"><span class="material-symbols-outlined text-[20px]">category</span><span>Categories</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="orders" href="orders.html"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span>Orders</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="customers" href="customers.html"><span class="material-symbols-outlined text-[20px]">group</span><span>Customers</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="analytics" href="analytics.html"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Analytics</span></a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="settings" href="settings.html"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings</span></a>
+<div class="my-2 border-t border-surface-container"></div>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-primary hover:bg-surface-container-low transition-colors font-label-uppercase text-label-uppercase font-bold" href="../index.html">
+  <span class="material-symbols-outlined text-[20px] text-on-tertiary-container">storefront</span><span>← View Storefront</span>
+</a>
+</nav></div><div class="flex flex-col px-space-md pb-space-lg"><div class="px-space-sm pb-space-sm"><div class="h-[1px] w-full bg-surface-container"></div></div><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="relative flex items-center justify-center"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-on-tertiary-container rounded-full ring-2 ring-surface-container-lowest"></span></div><div class="flex flex-col"><span class="font-headline-sm text-body-sm font-semibold text-on-surface leading-tight">Elena Rostova</span><span class="font-label-uppercase text-label-uppercase text-on-surface-variant">Ops Lead</span></div></div><div class="flex items-center gap-1"><button aria-label="Notifications" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span></button><button aria-label="Logout" class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">logout</span></button></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-uppercase text-label-uppercase text-on-surface-variant"><span class="text-on-surface font-semibold">System Telemetry</span><span>//</span><span>Commerce Operations</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-uppercase text-label-uppercase"><span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span><span>Operational • Zurich EU-1</span></div></div><div class="flex items-center gap-space-md"><div class="relative w-80 hidden md:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full h-9 pl-9 pr-3 rounded-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest transition-all" id="admin-quick-search" placeholder="Search orders, SKU, customers (⌘K)..." type="text"/></div><a href="product-edit.html"  class="flex items-center gap-space-xs px-space-md py-2 rounded-full bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary transition-all font-label-uppercase text-label-uppercase shadow-sm" type="button"><span class="material-symbols-outlined text-[16px]">add</span><span>New Product</span></a><div class="relative flex items-center"><button aria-label="Notifications indicator" class="relative p-2 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-on-tertiary-container ring-2 ring-surface-container-lowest"></span></button></div><div class="w-[1px] h-6 bg-surface-container"></div><div class="flex items-center gap-space-xs cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full max-w-[1440px] mx-auto px-space-md lg:px-space-xl py-space-lg flex flex-col gap-space-lg">
+<!-- Top Nav / Telemetry & Global Controls Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-sm">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2 font-label-uppercase text-label-uppercase text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>Back to Products</span>
+</a>
+<span class="text-outline-variant">/</span>
+<span>Catalog Management</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold">SKU Provisioning</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm pt-1">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Add New Product</h1>
+<div class="px-2.5 py-1 rounded-full bg-surface-container font-label-numeric text-body-sm text-on-surface tracking-wider font-semibold">
+            #AUR-NEW-SKU
+          </div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-uppercase text-label-uppercase">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-ping"></span>
+<span>Autosaved 2m ago</span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface font-semibold">Draft In-Memory</span>
+</div>
+</div>
+</div>
+<!-- Action Cluster -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="px-space-md py-2.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-uppercase text-label-uppercase" type="button">
+          Discard Changes
+        </button>
+<button class="px-space-md py-2.5 rounded-full bg-surface-container-lowest hover:bg-surface-container-low text-on-surface transition-all font-label-uppercase text-label-uppercase shadow-sm" type="button">
+          Save as Draft
+        </button>
+<button class="flex items-center gap-1.5 px-space-lg py-2.5 rounded-full bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary transition-all font-label-uppercase text-label-uppercase shadow-md" type="button">
+<span class="material-symbols-outlined text-[18px]">publish</span>
+<span>Publish Product</span>
+</button>
+</div>
+</div>
+<!-- Main Workspace Grid (65% Core Specs / 35% Telemetry Rail) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Primary Core Column (8 Cols on Desktop) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Section 1: Core Specifications -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">General Nomenclature &amp; Specifications</h2>
+</div>
+<span class="font-label-uppercase text-label-uppercase text-on-tertiary-container bg-surface-container-low px-2 py-0.5 rounded-full">
+              STEP 01 // TAXONOMY
+            </span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant" for="product-name">
+                Product Title / Nomenclature *
+              </label>
+<span class="font-label-uppercase text-label-uppercase text-outline">32 / 80 CHARS</span>
+</div>
+<input class="w-full h-12 px-4 rounded-lg bg-surface-container-lowest text-on-surface font-headline-sm text-headline-sm focus:outline-none focus:bg-surface-container-low transition-colors shadow-xs" id="product-name" placeholder="e.g. Kinetic Shield GORE-TEX Shell" type="text" value="AeroVent™ Pro Performance Tee"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Brand Division</label>
+<div class="h-11 px-4 rounded-lg bg-surface-container-low text-on-surface flex items-center justify-between font-body-md text-body-md cursor-default">
+<span class="font-medium">AURA Athletics (AURA LAB System)</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">lock</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant" for="discipline-select">Discipline Architecture</label>
+<div class="relative">
+<select class="w-full h-11 px-4 appearance-none rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-low transition-colors shadow-xs cursor-pointer" id="discipline-select">
+<option selected="">Running &amp; Training (High Exertion)</option>
+<option>Outerwear Lab (Thermal Insulation)</option>
+<option>Foundation / Compression Layer</option>
+<option>Post-Performance Recovery</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">
+                  unfold_more
+                </span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant" for="summary-text">
+              Engineering Summary (Hero Punchline)
+            </label>
+<input class="w-full h-11 px-4 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-low transition-colors shadow-xs" id="summary-text" type="text" value="Ultralight micro-mesh technical running tee engineered with targeted laser-cut ventilation mapped to high-sweat zones."/>
+</div>
+<!-- Rich-Text Specification Shell -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">
+              Full Technical Description &amp; Lab Notes
+            </label>
+<div class="rounded-xl overflow-hidden bg-surface-container-low">
+<!-- Formatting Toolbar -->
+<div class="px-3 py-2 bg-surface-container flex flex-wrap items-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors" title="Bold" type="button">
+<span class="material-symbols-outlined text-[18px]">format_bold</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors" title="Italic" type="button">
+<span class="material-symbols-outlined text-[18px]">format_italic</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors" title="List Bulleted" type="button">
+<span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors" title="Numbered List" type="button">
+<span class="material-symbols-outlined text-[18px]">format_list_numbered</span>
+</button>
+<div class="w-[1px] h-4 bg-outline-variant mx-1"></div>
+<button class="p-1.5 rounded hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors" title="Insert Spec Code" type="button">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-colors" title="Attach Telemetry Link" type="button">
+<span class="material-symbols-outlined text-[18px]">link</span>
+</button>
+<div class="ml-auto flex items-center gap-2 pr-1">
+<span class="font-label-uppercase text-label-uppercase text-on-tertiary-container bg-surface-container-lowest px-2 py-0.5 rounded-full">MD PARSER // ACTIVE</span>
+</div>
+</div>
+<!-- Text Area -->
+<textarea class="w-full p-4 bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none leading-relaxed resize-none" rows="6">The AeroVent™ Pro Performance Tee is engineered for maximum thermal displacement during high-exertion aerobic output. 
+
+Constructed from a proprietary 82% Bio-Polyester / 18% Elastane blend integrated with permanent silver-ion antimicrobial yarn, this garment maintains zero moisture accumulation across multi-hour training blocks.
+
+KEY ATTRIBUTES:
+• Dual-channel micro-perforation on rear thoracic panel for continuous passive convection
+• Bonded ergonomic flatlock seam architecture eliminates friction under backpack and hydration vest harness systems
+• 360° low-profile retro-reflective carbon heat-transfer iconography</textarea>
+</div>
+</div>
+</div>
+<!-- Section 2: Media Asset Matrix -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">perm_media</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Digital Assets &amp; Product Visuals</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-uppercase text-label-uppercase text-outline">4 / 8 SLOTS COMMITTED</span>
+</div>
+</div>
+<!-- Hero Dropzone -->
+<div class="relative rounded-xl p-6 bg-surface-container-low flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-all">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-[24px]">cloud_upload</span>
+</div>
+<p class="font-headline-sm text-body-md font-semibold text-on-surface">Drag and drop high-resolution studio imagery</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mt-0.5">
+              Supports minimum 2000×2000px JPG, PNG, or WebP. Color balance normalized to Studio Daylight 5500K. Max 15MB.
+            </p>
+<button class="mt-3 px-4 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-uppercase text-label-uppercase shadow-xs transition-colors" type="button">
+              Browse Filesystem
+            </button>
+</div>
+<!-- Gallery Slot Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md pt-2">
+<!-- Slot 1: Primary Cover (Using provided image 1) -->
+<div class="relative group rounded-xl overflow-hidden aspect-[4/5] bg-surface-container-low shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Technical athletic t-shirt in matte obsidian gray floating on seamless studio background, precision flat seams, micro perforated texture, dynamic aerodynamic apparel photography with clean drop shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC4o1EHO6lzNcWnPb2aVY8UjYoUBvqzrIdi8-Kssu9iPzmRjgUFzAFjeOhLp55q5VsKPgm3-Mvf7lfypXFrCV_zQ8EYRA6GTe0qZb8QuOu-D8JVFg8EBLeQusz0DXHdpK89YKrkow1KM1pPSDyFFoFDLB4rzH5igR0_NMim73vN9gk6FC_EUpAH7FERe3GvjMJ5xD_4_P-SOjctcCY8LEUv8jnpp8Yvvl9V8dnW1BBa1lBNCZVfQ7TDg"/>
+<div class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-uppercase text-[10px] tracking-widest shadow-sm">
+                HERO // COVER
+              </div>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" title="Inspect" type="button">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-error flex items-center justify-center hover:bg-error-container transition-colors" title="Delete Asset" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Slot 2: Secondary Studio Angle -->
+<div class="relative group rounded-xl overflow-hidden aspect-[4/5] bg-surface-container-low shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Close up architectural detail of black technical sportswear fabric showing silver-ion bonding, ultrasonic welded seams, and high precision micro vents under diffused cold daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWa1Klb_abbuW9NK2Sbrg7wg9793e_GSTgvU4gCbulncab_XGl-64LcR-aXksQikTPt_5rmpsLiAaVnKFB0QD9P7sESCtApRjPut_n6J4uoA-QqeGhY6Ednts5Nl2lIT0P8jNTYjAQSKalb1LhItAoDeGZEXPgIEQATn6NmkcG225Xn-jsSlUilnnNVU_xjvUwdTlabS5JQ_MdB3Tst5v4UbJ2TTkgspLjXQdQMEZsWGvO1gjdD8S67g"/>
+<div class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-xs text-on-surface font-label-uppercase text-[10px] tracking-wider">
+                MACRO PERF
+              </div>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">drag_indicator</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-error flex items-center justify-center hover:bg-error-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Slot 3: Outerwear Layer Context (Using provided image 2) -->
+<div class="relative group rounded-xl overflow-hidden aspect-[4/5] bg-surface-container-low shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Front view of aerodynamic dark obsidian hooded performance shell jacket with waterproof storm zippers and contoured silhouette on clean studio gradient background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvWDDoInrmf6XDvePO9AEq_A5h1Cu_KbkoWdWFLctEXbTspPw-5TeAMMqCFbgzc2rFWU3XmP87OKvpJOmqcgKVLouovsA_5iQSDoEGKBb4NUXL6sUsnNdX9T2EVwqzU6Z-TD_NfIgfcHmTpYpYW-PvyRQEwiVGZGyZCJ0QKYUOgCWHsnhCRds9XW6Sed44GIJy_EGVOf1sklnjw21_UCiFIx-t2bPknfd4MGZki82sNnILjHDkBBSjtw"/>
+<div class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-xs text-on-surface font-label-uppercase text-[10px] tracking-wider">
+                SYSTEM PAIRING
+              </div>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">drag_indicator</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-lowest text-error flex items-center justify-center hover:bg-error-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Slot 4: Empty Upload Receptor -->
+<div class="rounded-xl aspect-[4/5] bg-surface-container-low flex flex-col items-center justify-center gap-2 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">add</span>
+</div>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant">Add Angle</span>
+</div>
+</div>
+</div>
+<!-- Section 3: SKU Variations & Inventory Matrix -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">grid_view</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Variation Matrix &amp; Stock Provisioning</h2>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-on-tertiary-container hover:underline font-label-uppercase text-label-uppercase flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">auto_fix_high</span>
+<span>Bulk Sync Prices</span>
+</button>
+</div>
+</div>
+<!-- Colorway Selector Chips -->
+<div class="flex flex-col gap-2">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Active Lab Colorways</label>
+<div class="flex flex-wrap items-center gap-2">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-body-sm text-body-sm shadow-2xs">
+<span class="w-3.5 h-3.5 rounded-full bg-primary ring-1 ring-surface-container-lowest"></span>
+<span class="font-medium">Matte Obsidian</span>
+<span class="text-outline text-xs">#0B0F12</span>
+<button class="text-on-surface-variant hover:text-error ml-1" type="button"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-body-sm text-body-sm shadow-2xs">
+<span class="w-3.5 h-3.5 rounded-full bg-secondary ring-1 ring-surface-container-lowest"></span>
+<span class="font-medium">Mineral Slate</span>
+<span class="text-outline text-xs">#5C5F60</span>
+<button class="text-on-surface-variant hover:text-error ml-1" type="button"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-body-sm text-body-sm shadow-2xs">
+<span class="w-3.5 h-3.5 rounded-full bg-surface-container-highest ring-1 ring-surface-container-lowest"></span>
+<span class="font-medium">Glacier Mist</span>
+<span class="text-outline text-xs">#D3E4FE</span>
+<button class="text-on-surface-variant hover:text-error ml-1" type="button"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</div>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors font-label-uppercase text-label-uppercase" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add Tint</span>
+</button>
+</div>
+</div>
+<!-- Size Selector Pills -->
+<div class="flex flex-col gap-2">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Anatomical Sizing Profile</label>
+<div class="flex flex-wrap gap-2">
+<button class="w-11 h-9 rounded-lg bg-surface-container-lowest text-on-surface shadow-xs font-label-numeric text-body-sm font-semibold hover:bg-surface-container-low transition-colors" type="button">XS</button>
+<button class="w-11 h-9 rounded-lg bg-primary text-on-primary shadow-xs font-label-numeric text-body-sm font-semibold" type="button">S</button>
+<button class="w-11 h-9 rounded-lg bg-primary text-on-primary shadow-xs font-label-numeric text-body-sm font-semibold" type="button">M</button>
+<button class="w-11 h-9 rounded-lg bg-primary text-on-primary shadow-xs font-label-numeric text-body-sm font-semibold" type="button">L</button>
+<button class="w-11 h-9 rounded-lg bg-surface-container-lowest text-on-surface shadow-xs font-label-numeric text-body-sm font-semibold hover:bg-surface-container-low transition-colors" type="button">XL</button>
+<button class="w-11 h-9 rounded-lg bg-surface-container-lowest text-on-surface shadow-xs font-label-numeric text-body-sm font-semibold hover:bg-surface-container-low transition-colors" type="button">XXL</button>
+</div>
+</div>
+<!-- Dense Variation Table -->
+<div class="overflow-x-auto mt-2 rounded-xl bg-surface-container-low">
+<table class="w-full text-left font-body-sm text-body-sm border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-uppercase text-[11px] tracking-wider">
+<th class="py-3 px-4 font-semibold">Variant Spec</th>
+<th class="py-3 px-4 font-semibold">SKU Designator</th>
+<th class="py-3 px-4 font-semibold">Retail Price</th>
+<th class="py-3 px-4 font-semibold">Zurich Stock</th>
+<th class="py-3 px-4 font-semibold">EAN / Barcode</th>
+<th class="py-3 px-4 font-semibold text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 px-4 flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary shrink-0"></span>
+<span class="font-medium">Obsidian // Small</span>
+</td>
+<td class="py-3 px-4 font-label-numeric text-xs text-on-surface-variant">AUR-8820-BLK-S</td>
+<td class="py-3 px-4">
+<div class="relative w-20">
+<span class="absolute left-2 top-1/2 -translate-y-1/2 text-outline">$</span>
+<input class="w-full h-8 pl-5 pr-1 text-xs rounded bg-surface-container-lowest font-label-numeric text-on-surface focus:outline-none shadow-2xs" type="text" value="72.00"/>
+</div>
+</td>
+<td class="py-3 px-4">
+<input class="w-16 h-8 px-2 text-xs rounded bg-surface-container-lowest font-label-numeric text-on-surface focus:outline-none shadow-2xs" type="number" value="28"/>
+</td>
+<td class="py-3 px-4 font-label-numeric text-xs text-on-surface-variant">764019283011</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 text-[11px] font-label-uppercase px-2 py-0.5 rounded-full bg-surface-container text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                      ACTIVE
+                    </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-lowest transition-colors bg-surface-container-lowest/50">
+<td class="py-3 px-4 flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary shrink-0"></span>
+<span class="font-medium">Obsidian // Medium</span>
+</td>
+<td class="py-3 px-4 font-label-numeric text-xs text-on-surface-variant">AUR-8820-BLK-M</td>
+<td class="py-3 px-4">
+<div class="relative w-20">
+<span class="absolute left-2 top-1/2 -translate-y-1/2 text-outline">$</span>
+<input class="w-full h-8 pl-5 pr-1 text-xs rounded bg-surface-container-lowest font-label-numeric text-on-surface focus:outline-none shadow-2xs" type="text" value="72.00"/>
+</div>
+</td>
+<td class="py-3 px-4">
+<input class="w-16 h-8 px-2 text-xs rounded bg-surface-container-lowest font-label-numeric text-on-surface focus:outline-none shadow-2xs" type="number" value="44"/>
+</td>
+<td class="py-3 px-4 font-label-numeric text-xs text-on-surface-variant">764019283012</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 text-[11px] font-label-uppercase px-2 py-0.5 rounded-full bg-surface-container text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                      ACTIVE
+                    </span>
+</td>
+</tr>
+<!-- Row 3 (Low stock demonstration) -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 px-4 flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary shrink-0"></span>
+<span class="font-medium">Slate // Large</span>
+</td>
+<td class="py-3 px-4 font-label-numeric text-xs text-on-surface-variant">AUR-8820-SLT-L</td>
+<td class="py-3 px-4">
+<div class="relative w-20">
+<span class="absolute left-2 top-1/2 -translate-y-1/2 text-outline">$</span>
+<input class="w-full h-8 pl-5 pr-1 text-xs rounded bg-surface-container-lowest font-label-numeric text-on-surface focus:outline-none shadow-2xs" type="text" value="72.00"/>
+</div>
+</td>
+<td class="py-3 px-4 flex items-center gap-1.5">
+<input class="w-16 h-8 px-2 text-xs rounded bg-surface-container-lowest font-label-numeric text-error font-semibold focus:outline-none shadow-2xs" type="number" value="6"/>
+<span class="material-symbols-outlined text-error text-[16px]" title="Critical Stock Threshold">warning</span>
+</td>
+<td class="py-3 px-4 font-label-numeric text-xs text-on-surface-variant">764019283033</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center gap-1 text-[11px] font-label-uppercase px-2 py-0.5 rounded-full bg-error-container text-on-error-container">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                      LOW STOCK
+                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Section 4: Performance Lab Attributes -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">science</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Lab Metrics &amp; Material Composition</h2>
+</div>
+<span class="font-label-uppercase text-label-uppercase text-on-tertiary-container bg-surface-container-low px-2 py-0.5 rounded-full">
+              CERTIFIED ISO // 9001
+            </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Material Blend Archetype</label>
+<input class="h-11 px-4 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-low shadow-xs" type="text" value="82% Bio-Polyester, 18% Elastane with Silver-Ion Matrix"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Fit &amp; Anatomical Silhouette</label>
+<input class="h-11 px-4 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-low shadow-xs" type="text" value="Athletic Streamlined / Ergonomic Articulated"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Garment Net Mass</label>
+<div class="relative">
+<input class="w-full h-11 px-4 rounded-lg bg-surface-container-lowest text-on-surface font-label-numeric text-body-md focus:outline-none focus:bg-surface-container-low shadow-xs" type="text" value="112"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 font-label-uppercase text-label-uppercase text-outline">GRAMS</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Permeability CFM</label>
+<div class="relative">
+<input class="w-full h-11 px-4 rounded-lg bg-surface-container-lowest text-on-surface font-label-numeric text-body-md focus:outline-none focus:bg-surface-container-low shadow-xs" type="text" value="148.5"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 font-label-uppercase text-label-uppercase text-outline">CFM/M²</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Dry-Time Velocity</label>
+<div class="relative">
+<input class="w-full h-11 px-4 rounded-lg bg-surface-container-lowest text-on-surface font-label-numeric text-body-md focus:outline-none focus:bg-surface-container-low shadow-xs" type="text" value="14"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 font-label-uppercase text-label-uppercase text-outline">MINUTES</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Settings, Pricing, Inventory & SEO Telemetry (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Rail Card 1: Lifecycle Status & Channels -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Status &amp; Routing</h3>
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Product Life-State</label>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-uppercase text-label-uppercase font-semibold shadow-xs" type="button">
+                Draft State
+              </button>
+<button class="py-2.5 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-uppercase text-label-uppercase transition-colors" type="button">
+                Immediate Live
+              </button>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Sales Channel Distribution</label>
+<div class="flex flex-col gap-2.5">
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 focus:outline-none accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-sm text-on-surface">Global Online Storefront (Direct)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 focus:outline-none accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-sm text-on-surface">Wholesale &amp; Studio Partners (B2B)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 focus:outline-none accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-sm text-on-surface">Zurich Flagship POS (Bahnhofstrasse)</span>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 pt-2">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Scheduled Drop Target</label>
+<input class="h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-label-numeric text-body-sm focus:outline-none cursor-pointer" type="datetime-local" value="2025-05-15T09:00"/>
+</div>
+</div>
+<!-- Rail Card 2: Pricing & Profit Yield Telemetry -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Financial Economics</h3>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">payments</span>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Base MSRP</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 font-label-numeric text-on-surface-variant">$</span>
+<input class="w-full h-11 pl-7 pr-3 rounded-lg bg-surface-container-low text-on-surface font-label-numeric text-headline-sm focus:outline-none" type="text" value="72.00"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Compare At</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 font-label-numeric text-on-surface-variant">$</span>
+<input class="w-full h-11 pl-7 pr-3 rounded-lg bg-surface-container-lowest text-on-surface font-label-numeric text-headline-sm focus:outline-none shadow-xs" type="text" value="85.00"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Direct Cost of Goods (COGS)</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 font-label-numeric text-on-surface-variant">$</span>
+<input class="w-full h-11 pl-7 pr-3 rounded-lg bg-surface-container-lowest text-on-surface font-label-numeric text-headline-sm focus:outline-none shadow-xs" type="text" value="18.40"/>
+</div>
+</div>
+<!-- Profit Margin Diagnostic Pill -->
+<div class="rounded-xl p-4 bg-surface-container-low flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant">Net Margin Yield</span>
+<span class="font-headline-sm text-body-sm font-semibold text-on-tertiary-container">74.4% MARGIN</span>
+</div>
+<!-- Visual CSS Gauge -->
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-on-tertiary-container rounded-full" style="width: 74.4%;"></div>
+</div>
+<div class="flex justify-between items-center text-xs text-on-surface-variant pt-1">
+<span>Unit Profit: <strong class="text-on-surface font-label-numeric">$53.60</strong></span>
+<span>Target: &gt;68.0%</span>
+</div>
+</div>
+<label class="flex items-center gap-3 cursor-pointer pt-1">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 focus:outline-none accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-md text-body-sm text-on-surface">Auto-calculate regional VAT &amp; Duties</span>
+</label>
+</div>
+<!-- Rail Card 3: Global Logistics & Warehouse Allocation -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Logistics Hub Telemetry</h3>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">warehouse</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-body-md text-body-sm font-semibold text-on-surface">Global Stock Sum</span>
+<span class="font-label-uppercase text-[11px] text-on-surface-variant">Across All Active Sizes</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-primary">142</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Fulfillment Facility Origin</label>
+<div class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-body-md text-body-sm flex items-center justify-between font-medium">
+<span>Zurich Logistics Hub (EU-Central)</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">pin_drop</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Automated Replenishment Alert Level</label>
+<div class="relative">
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-label-numeric text-body-md focus:outline-none shadow-xs" type="number" value="15"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 font-label-uppercase text-label-uppercase text-outline">UNITS</span>
+</div>
+</div>
+</div>
+<!-- Rail Card 4: Search Engine Optimization (SEO SERP Simulator) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Search &amp; Graph Preview</h3>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">public</span>
+</div>
+<!-- Google SERP Card Preview -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-uppercase text-[11px] text-on-surface-variant truncate">https://aura-athletics.com &gt; products &gt; aerovent-pro-tee</span>
+<span class="font-headline-sm text-body-md text-on-tertiary-container hover:underline cursor-pointer font-semibold leading-tight line-clamp-1">
+              AeroVent™ Pro Performance Tee | AURA Athletics Lab
+            </span>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2 mt-0.5">
+              Engineered with targeted laser-cut ventilation and silver-ion bio-polyester for zero thermal saturation during maximum aerobic output.
+            </p>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">URL Slug / Identifier</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 font-label-numeric text-xs text-outline pointer-events-none">/products/</span>
+<input class="w-full h-10 pl-24 pr-3 rounded-lg bg-surface-container-lowest text-on-surface font-label-numeric text-body-sm focus:outline-none shadow-xs" type="text" value="aerovent-pro-performance-tee"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-baseline">
+<label class="font-label-uppercase text-label-uppercase text-on-surface-variant">Meta SERP Description</label>
+<span class="font-label-uppercase text-label-uppercase text-outline">148 / 160</span>
+</div>
+<textarea class="w-full p-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none shadow-xs resize-none" rows="3">Engineered with targeted laser-cut ventilation and silver-ion bio-polyester for zero thermal saturation during maximum aerobic exertion blocks.</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Form Action Deck / Commit Dock -->
+<div class="sticky bottom-6 z-30 w-full rounded-full p-3 bg-surface-container-lowest/90 backdrop-blur-xl shadow-xl flex items-center justify-between">
+<div class="flex items-center gap-3 pl-4">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container animate-ping"></span>
+<span class="font-label-uppercase text-label-uppercase text-on-surface hidden sm:inline">
+          System Verification: 4/4 Matrix Constraints Passed
+        </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors font-label-uppercase text-label-uppercase" type="button">
+          Cancel &amp; Reset
+        </button>
+<button class="px-space-md py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors font-label-uppercase text-label-uppercase" type="button">
+          Save Draft (⌘S)
+        </button>
+<button class="flex items-center gap-1.5 px-space-lg py-2 rounded-full bg-primary text-on-primary hover:bg-primary-container transition-all font-label-uppercase text-label-uppercase shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Commit &amp; Publish</span>
+</button>
+</div>
+</div>
+</div>
+</div></main></div><script src="../js/admin.js"></script>
+</body></html>
